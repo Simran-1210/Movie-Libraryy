@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" exact component={HomeWrapper} />
-        <Route path="/winner" component={WinnerWrapper} />
+        <Route path="/" element={<HomeWrapper />} />
+        <Route path="/winner" element={<WinnerWrapper />} />
       </Routes>
     </>
   );
