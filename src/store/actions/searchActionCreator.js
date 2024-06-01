@@ -41,8 +41,8 @@ export const searchOmdb = (searchTerm, seriesToggle) => {
 
     // OMDB Movie API
     let omdbUrl = null;
-    const apiKey = import.meta.env.REACT_APP_OMDB_KEY;
-    console.log(apiKey);
+    const apiKey = import.meta.env.VITE_OMDB_KEY;
+    // console.log(apiKey);
     if (seriesToggle) {
       omdbUrl = `https://www.omdbapi.com/?s=${searchTerm}&type=series&apikey=${apiKey}`;
     } else {
@@ -53,7 +53,7 @@ export const searchOmdb = (searchTerm, seriesToggle) => {
       .get(omdbUrl)
       .then((res) => {
         const response = res.data;
-        console.log(response);
+        // console.log(response);
         if (response.Response) {
           let resultList = response.Search;
 
@@ -61,7 +61,7 @@ export const searchOmdb = (searchTerm, seriesToggle) => {
           if (Array.isArray(resultList)) {
             // If it is more then 3 items it limits to 3
             resultList =
-              resultList.length > 3 ? resultList.slice(0, 3) : resultList;
+              resultList.length > 5 ? resultList.slice(0, 5) : resultList;
 
             // Loop to ensure series have an end date if it is a series only
             resultList.forEach((result) => {

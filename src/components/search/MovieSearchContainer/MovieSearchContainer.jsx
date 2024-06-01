@@ -7,7 +7,6 @@ import useDebounce from "../../../utilities/debounceHook";
 import * as action from "../../../store/actions/index";
 import MovieSearchMetaInfo from "../MetaDetailsMovieSearch/MetaDetailsMovieSearch";
 import SearchErrorMessage from "../SearchErrorMessage/SearchErrorMessage";
-import MovieSearchConfirmation from "../MovieSearchConfirmation/MovieSearchConfirmation";
 
 const MovieSearchContainer = () => {
   // Local States
@@ -138,7 +137,6 @@ const MovieSearchContainer = () => {
       ) : null}
       {searchResults}
       {searchError ? <SearchErrorMessage error={apiErrorMessage} /> : null}
-      {nominationsCompleted ? <MovieSearchConfirmation /> : null}
     </section>
   );
 };
